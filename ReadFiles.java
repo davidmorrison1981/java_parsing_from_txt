@@ -7,8 +7,8 @@ public class ReadFiles
     {
         try
         {
-        File inFile = new File("data.txt");
-        BufferedReader reader = new BufferedReader(new java.io.FileReader(inFile));
+        File inputFile = new File("data.txt");
+        BufferedReader reader = new BufferedReader(new java.io.FileReader(inputFile));
         int[] counter = new int[26];
         int totalChars = 0;
         int nonLetter = 0;
