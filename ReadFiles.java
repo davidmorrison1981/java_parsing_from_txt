@@ -25,7 +25,7 @@ public class ReadFiles
             }
         }
 
-        Map letters = sorting(counter);  
+        Map letters = sortLetters(counter);  
         printMap(letters);
 
         }
@@ -34,4 +34,34 @@ public class ReadFiles
             System.out.println(e);
         }
     }
+
+
+ private static Map sortLetters(int[] counter) {
+        Map letterHash = new LinkedHashMap<String, Integer>() {};
+        int k = 0 ;
+        for (int i = 0; i < 26; i++) {
+             int maxCount =-1;
+            for (int j = 0; j < 26; j++) {
+                if(maxCount < counter[j]){
+                    maxCount = counter[j];
+                    k = j;
+                }
+            }     
+            counter[k] = -1;
+            if(maxCount!=0)
+            letterHash.put(((char)(k+97))+"", maxCount);
+            maxCount=0;
+        }
+        return letterHash;
+    }
+
+
+    public static void printMap(Map<String, Integer> map)
+    {
+       for (Map.Entry<String, Integer> entry : map.entrySet()) {
+         String key = entry.getKey().toString();
+         Integer value = entry.getValue();
+         System.out.println("letter, " + key + " count" + value);
+      }
+   }
 }
