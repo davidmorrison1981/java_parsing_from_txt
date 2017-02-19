@@ -58,10 +58,11 @@ public class ReadFiles
 
     public static void printMap(Map<String, Integer> map)
     {
+      System.out.println("Quantity   "+ " Letter");
        for (Map.Entry<String, Integer> entry : map.entrySet()) {
          String key = entry.getKey().toString();
          Integer value = entry.getValue();
-         System.out.println("letter, " + key + " count" + value);
+         System.out.println("   "+value + "         "+ key);
       }
    }
 }
