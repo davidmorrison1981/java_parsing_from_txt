@@ -26,6 +26,7 @@ public class ReadFiles
         }
 
         Map letters = sortLetters(counter);  
+        System.out.println("Total Letters:  "+totalChars);
         printMap(letters);
 
         }
@@ -59,10 +60,18 @@ public class ReadFiles
     public static void printMap(Map<String, Integer> map)
     {
       System.out.println("Quantity   "+ " Letter");
+       int printCount =0;
        for (Map.Entry<String, Integer> entry : map.entrySet()) {
          String key = entry.getKey().toString();
          Integer value = entry.getValue();
+         if (printCount <10){
          System.out.println("   "+value + "         "+ key);
+         printCount++;
+         }
+         else{
+            break;
+
+         }
       }
    }
 }
